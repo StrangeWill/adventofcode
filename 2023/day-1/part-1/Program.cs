@@ -4,11 +4,7 @@ var sum = input
     {
         var numbers = line
             .Where(c => int.TryParse(c.ToString(), out var _))
-            .Select(c =>
-            {
-                int.TryParse(c.ToString(), out var num);
-                return num;
-            });
+            .Select(c => int.Parse(c.ToString()));
         return $"{numbers.First()}{numbers.Last()}";
     })
     .Sum(int.Parse);
